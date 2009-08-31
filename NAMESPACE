@@ -1,0 +1,7 @@
+exportPattern("^[frbr|predict\\.RemoraModel]+")
+exportClasses(
+     "RemoraConfiguration",
+     "RemoraDistance",
+     "RemoraKernels",
+     "RemoraModel" 
+)
