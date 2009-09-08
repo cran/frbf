@@ -18,7 +18,7 @@ buildClassification(distance_matrix, config)
   Returns a list of points and respective class to which it belongs.
 }
 %\references{ ~put references to the literature/web site here ~ }
-%\author{ ~~who you are~~ }
+\author{ Fernando Martins }
 \note{ This function is part of the frbf implementation and is for internal use only. }
 \seealso{ \code{\link[frbf:RemoraConfiguration-class]{RemoraConfiguration}} }% Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

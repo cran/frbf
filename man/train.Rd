@@ -20,7 +20,7 @@ train(training_matrix, config)
   Returns the kernels from the training step.
 }
 %\references{ ~put references to the literature/web site here ~ }
-%\author{ ~~who you are~~ }
+\author{ Fernando Martins }
 \note{ This function is part of the frbf implementation and is for internal use only. }
 \seealso{ \code{\link[frbf:RemoraConfiguration-class]{RemoraConfiguration}}}
 % Add one or more standard keywords, see file 'KEYWORDS' in the

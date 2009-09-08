@@ -23,7 +23,7 @@ The initial value is the same for all clusters.
   Returns the initial s parameter.
 }
 %\references{ ~put references to the literature/web site here ~ }
-%\author{ ~~who you are~~ }
+\author{ Fernando Martins }
 \note{ This function is part of the frbf implementation and is for internal use only. }
 \seealso{ \code{\link[frbf:RemoraConfiguration-class]{RemoraConfiguration}}
 \code{\link[frbf:findLambda]{findLambda}} }

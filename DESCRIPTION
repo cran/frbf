@@ -2,8 +2,8 @@ Package: frbf
 Type: Package
 Title: Implementation of the "Flexible kernels for RBF network"
         algorithm
-Version: 0.9
-Date: 2009-08-31
+Version: 1.0
+Date: 2009-09-08
 Author: Fernando Martins
 Maintainer: Fernando Martins <fmp.martins@gmail.com>
 Description: Flexible kernerl for radial basis function network
@@ -11,6 +11,6 @@ Description: Flexible kernerl for radial basis function network
 License: LGPL
 LazyLoad: yes
 Depends: methods
-Packaged: Thu Sep 3 19:45:42 2009; root
+Packaged: Wed Sep 9 16:54:34 2009; root
 Repository: CRAN
-Date/Publication: 2009-09-03 19:31:56
+Date/Publication: 2009-09-09 16:53:40

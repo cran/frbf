@@ -22,7 +22,7 @@ remoraDistance(index, distance = NULL, point = NULL, class_name = NULL)
   Returns the result distance in a \code{\link[frbf:RemoraDistance-class]{RemoraDistance}} object
 }
 %\references{ ~put references to the literature/web site here ~ }
-%\author{ ~~who you are~~ }
+\author{ Fernando Martins }
 \note{ This function is part of the frbf implementation and is for internal use only. }
 \seealso{ \code{\link[frbf:RemoraKernels-class]{RemoraKernels}}
 \code{\link[stats:kmeans]{K-Means}}

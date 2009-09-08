@@ -21,13 +21,13 @@ Depends: \tab methods\cr
 The package provides the Flexible Radial Basis Function that will create a classification model usable on the predict function.
 }
 \author{
-André Falcão
 Fernando Martins
+Andre Falcao
 
-Maintainers: Fernando Martins <fmp.martins@gmail.com>, André Falcão <afalcao@di.fc.ul.pt>
+Maintainers: Fernando Martins <fmp.martins@gmail.com>, Andre Falcao <afalcao@di.fc.ul.pt>
 }
 \references{
-André O. Falcão, Thibault Langlois and Andreas Wichert
+Andre O. Falcao, Thibault Langlois and Andreas Wichert
 (2006) \emph{Flexible kernels for RBF networks}. 
 Jornal of Neurocomputing, volume 69, pp 2356-2359. Elsevier.
 }

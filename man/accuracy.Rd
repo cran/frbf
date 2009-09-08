@@ -22,7 +22,7 @@ accuracy(accuracy_matrix, classification_vector, config, return_hit_vector = TRU
   Returns the total number of hits or accuracy ratio per cluster and total hit ration
 }
 %\references{ ~put references to the literature/web site here ~ }
-%\author{ ~~who you are~~ }
+\author{ Fernando Martins }
 \note{ This function is part of the frbf implementation and is for internal use only. }
 \seealso{ \code{\link[frbf:RemoraConfiguration-class]{RemoraConfiguration}} }
 

@@ -71,11 +71,11 @@ The verbosity set in the \code{frbf} will affect the \code{\link[frbf:predict.Re
   \item{kernels }{the model kernels, the result from the kmeans }
 }
 \references{ 
-André O. Falcão, Thibault Langlois and Andreas Wichert
+Andre O. Falcao, Thibault Langlois and Andreas Wichert
 (2006) \emph{Flexible kernels for RBF networks}. 
 Jornal of Neurocomputing, volume 69, pp 2356-2359. Elsevier.
  }
-\author{ Fernando Martins and André Falcão }
+\author{ Fernando Martins and Andre Falcao }
 \note{ 
 %\section{Warning }
 Some user defined values may be overwriten by the function if they are considered unsuitable for the learning procedure.

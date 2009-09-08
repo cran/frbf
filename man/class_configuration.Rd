@@ -19,6 +19,7 @@
 %\references{
 %  ~~ possibly secondary sources and usages ~~
 %}
+\author{ Fernando Martins }
 %\examples{
 %data(class_configuration)
 %## maybe str(class_configuration) ; plot(class_configuration) ...

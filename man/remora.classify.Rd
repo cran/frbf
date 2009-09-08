@@ -21,7 +21,7 @@ remora.classify(model, data_matrix, return_nice = FALSE)
   Returns classification prediction.
 }
 %\references{ ~put references to the literature/web site here ~ }
-%\author{ ~~who you are~~ }
+\author{ Fernando Martins }
 \note{ This function is part of the frbf implementation and is for internal use only. }
 \seealso{ \code{\link[frbf:RemoraModel-class]{RemoraModel}} }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

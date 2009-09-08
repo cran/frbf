@@ -25,10 +25,10 @@ predict.RemoraModel(object, data_matrix, ...)
 \value{
   The result is a prediction list containing the class name of each data point. The position of the data point in result is the same as the position in the matrix given for classification.
 }
-\references{ Andr\'{e} O. Falc{\~{a}}o, Thibault Langlois and Andreas Wichert
+\references{ Andre O. Falcao, Thibault Langlois and Andreas Wichert
 (2006) \emph{Flexible kernels for RBF networks}. 
 Jornal of Neurocomputing, volume 69, pp 2356-2359. Elsevier. }
-\author{ Fernando Martins and Andr\'{e} Falc{\~{a}}o }
+\author{ Fernando Martins and Andre Falcao }
 \note{ }
 \seealso{ \code{\link[frbf:frbf]{frbf}} 
 \code{\link[frbf:RemoraModel-class]{RemoraModel}}

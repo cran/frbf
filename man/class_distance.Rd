@@ -19,6 +19,7 @@
 %\references{
 %  ~~ possibly secondary sources and usages ~~
 %}
+\author{ Fernando Martins }
 %\examples{
 %data(class_distance)
 %## maybe str(class_distance) ; plot(class_distance) ...
