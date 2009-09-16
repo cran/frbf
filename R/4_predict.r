@@ -1,15 +1,13 @@
 #
-# Remora 
-#
-# Phase 2 - Predict
-#
-# After the clustering stage, the kernel location parameters correspond 
-# to the centroids of the resulting clusters, and the wij parameter of Eq. (1) 
-# is set to the number of patterns that are included in each cluster.
-# Finally, the spectral decomposition is performed for the covariance matrices 
-# of each kernel, determining the eigenvector matrix and the corresponding eigenvalues.
+# Remora Prediction
 #
 
+# 
+# Version 1, September 2009
+# Fernando Martins
+# fmp.martins@gmail.com
+# http://www.vilma-fernando.net/fernando
+#
 
 #
 # Builds the classification for each point through the distance matrix. 
@@ -28,7 +26,10 @@ buildClassification <- function(distance_matrix, config) {
     sum_matrix <- data.frame(distance_matrix)
     colnames(sum_matrix) <- colnames(distance_matrix)
     for (class_name in col_names) {
-      fullIndex <- getHierarquicalIndex(class_name)
+      #fullIndex <- getHierarquicalIndex(class_name)
+      fullIndex <- list()
+      fullIndex[1] <- getFlatIndexClass(class_name)
+      fullIndex[2] <- getFlatIndexCentroid(class_name)
       if (fullIndex[2] > 1) {
         sum_matrix[getFlatIndex(fullIndex[1], 1)] <- sum_matrix[getFlatIndex(fullIndex[1], 1)] + sum_matrix[class_name]
         sum_matrix <- getUnclassedMatrix(sum_matrix, class_name)

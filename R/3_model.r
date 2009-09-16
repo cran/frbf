@@ -1,17 +1,13 @@
 #
-# Remora
-#
-# Phase 1 - Model
-#
-# The number of kernels in each class is determined by the proportion of the 
-# total variance in the training set associated with that class.
-# Training data are separated according to each class, and the kernel�s centers 
-# are determined using a clustering algorithm (K-means). 
-# This algorithm operates over the normalized variables on each class.
-# After the clustering stage, the kernel location parameters correspond 
-# to the centroids of the resulting clusters
+# Remora Training
 #
 
+# 
+# Version 1, September 2009
+# Fernando Martins
+# fmp.martins@gmail.com
+# http://www.vilma-fernando.net/fernando
+#
 
 #
 # Get Number of Clusters.
@@ -340,6 +336,7 @@ initS <- function(distance_table, kernels, accuracy_matrix, config) {
       cat(' got ')
       cat(res2);          
       cat(' hits\n')
+      flush.console()
     }    
 
     if (res2 <= res1) {

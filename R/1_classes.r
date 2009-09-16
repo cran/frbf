@@ -1,6 +1,11 @@
 #
 # Remora implementation.
 # Global definitions.
+# 
+# Version 1, September 2009
+# Fernando Martins
+# fmp.martins@gmail.com
+# http://www.vilma-fernando.net/fernando
 #
 
 
@@ -66,8 +71,9 @@ FUNCTION_REMORA_EXP_ONE_LOG <- "exp_one_log"
 FUNCTION_REMORA_NORMALIZED_DIFFERENCE <- "normalized_difference"
 FUNCTION_REMORA_NORMALIZED_DIFFERENCE_SQ <- "normalized_difference_sq"
 FUNCTIONS_REMORA = c(FUNCTION_REMORA_EUCLIDEAN, FUNCTION_REMORA_ONE_MINUS, FUNCTION_REMORA_ONE_MINUS_SQ, 
-          FUNCTION_REMORA_MAHALANOBIS, FUNCTION_REMORA_EXP_ONE_MINUS, FUNCTION_REMORA_EXP_ONE_MINUS_SQ, 
-          FUNCTION_REMORA_NORMALIZED_DIFFERENCE, FUNCTION_REMORA_NORMALIZED_DIFFERENCE_SQ)
+          FUNCTION_REMORA_MAHALANOBIS, FUNCTION_REMORA_EXP_ONE_MINUS, FUNCTION_REMORA_EXP_ONE_LOG,
+          FUNCTION_REMORA_EXP_ONE_MINUS_SQ, FUNCTION_REMORA_NORMALIZED_DIFFERENCE, 
+          FUNCTION_REMORA_NORMALIZED_DIFFERENCE_SQ)
 
 
 #
@@ -136,36 +142,6 @@ getClassNames <- function(data_matrix, class_column) {
   classes
 }
 
-#
-# Returns the flat index of a class and its sub item index.
-# @param classe_name is the class name 
-# @param sub_index is the sub item index
-# @return composed flat index
-# @see getFlatIndexClass, getHierarquicalIndex
-#
-getFlatIndex <- function(classes, sub_index) {
-  sprintf("%s.%i", classes, sub_index)
-}
-
-#
-# Returns the class part of a composed flat index.
-# @para flatIndex is the flat index
-# @return the class part of a composed flat index
-# @see getFlatIndex, getHierarquicalIndex 
-#
-getFlatIndexClass <- function(flatIndex) {
-  unlist(strsplit(flatIndex, '\\.'))[1]
-}
-
-#
-# Returns the hierarquical index of a composed flat index.
-# @para flatIndex is the flat index
-# @return the hierarquical index of a composed flat index
-# @see getFlatIndex, getFlatIndexClass
-#
-getHierarquicalIndex <- function(flatIndex) {
-  unlist(strsplit(flatIndex, '\\.'))
-}
 
 #
 # Builds a Remora configuration object.
@@ -235,7 +211,8 @@ remoraConfiguration <- function(number_clusters, class_name, weighting_function 
   if (weighting_function %in% FUNCTIONS_REMORA) {
     result_configuration@weighting_function <- weighting_function
   } else {
-    stop("Undefined weighting function '", weighting_function ,"'.", , call. = TRUE)
+    fn_missing <- cat("Undefined weighting function ",weighting_function,". ")
+    stop(fn_missing, , call. = TRUE)
   }
   
   result_configuration

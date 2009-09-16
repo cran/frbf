@@ -2,6 +2,12 @@
 # Utilities
 #
 
+# 
+# Version 1, September 2009
+# Fernando Martins
+# fmp.martins@gmail.com
+# http://www.vilma-fernando.net/fernando
+#
 
 #
 # Get Matrix Without Classifier.
@@ -16,11 +22,11 @@ getUnclassedMatrix <- function(data_matrix, class_column) {
 
 
 #
-# Returns the flat index of a class and its sub item index.
+# Returns the flat index of a class and its centroid index.
 # @param classe_name is the class name 
 # @param sub_index is the sub item index
 # @return composed flat index
-# @see getFlatIndexClass, getHierarquicalIndex
+# @see getFlatIndexClass, getFlatIndexCentroid
 #
 getFlatIndex <- function(classes, sub_index) {
   sprintf("%s.%i", classes, sub_index)
@@ -30,10 +36,29 @@ getFlatIndex <- function(classes, sub_index) {
 # Returns the class part of a composed flat index.
 # @para flatIndex is the flat index
 # @return the class part of a composed flat index
-# @see getFlatIndex, getHierarquicalIndex 
+# @see getFlatIndex, getFlatIndexCentroid 
 #
 getFlatIndexClass <- function(flatIndex) {
-  unlist(strsplit(flatIndex, '\\.'))[1]
+  #unlist(strsplit(flatIndex, '\\.'))[1]
+  result <- unlist(strsplit(flatIndex, '\\.'))
+  if (length(result) > 2) {    
+    for(i in c(1:(length(result)-2)+1)) {
+      result[1] <- sprintf("%s.%s", result[1], result[i])
+    }
+  }
+  result[1]
+}
+
+#
+# Returns the centroid part of a composed flat index.
+# @para flatIndex is the flat index
+# @return the centroid part of a composed flat index
+# @see getFlatIndex, getFlatIndexClass 
+#
+getFlatIndexCentroid <- function(flatIndex) {
+  #unlist(strsplit(flatIndex, '\\.'))[1]
+  result <- unlist(strsplit(flatIndex, '\\.'))
+  result[length(result)]
 }
 
 #
@@ -42,9 +67,9 @@ getFlatIndexClass <- function(flatIndex) {
 # @return the hierarquical index of a composed flat index
 # @see getFlatIndex, getFlatIndexClass
 #
-getHierarquicalIndex <- function(flatIndex) {
-  unlist(strsplit(flatIndex, '\\.'))
-}
+#getHierarquicalIndex <- function(flatIndex) {
+#  unlist(strsplit(flatIndex, '\\.'))
+#}
 
 
 #
@@ -88,7 +113,10 @@ accuracy <- function(accuracy_matrix, classification_vector, config, return_hit_
   # holds the number of correct classifications per cluster
   for (index in c(1:total_vector)) {
     centroid_class <- classification_vector[[index]]
-    full_index <- getHierarquicalIndex(centroid_class)
+    #full_index <- getHierarquicalIndex(centroid_class)
+    full_index <- list()
+    full_index[1] <- getFlatIndexClass(centroid_class)
+    full_index[2] <- getFlatIndexCentroid(centroid_class)
         
     if (accuracy_matrix[index, class_column] == full_index[1] && accuracy_matrix[index, cluster_column] == full_index[2]) {
       cluster_correct_classify[centroid_class] <- as.numeric(cluster_correct_classify[centroid_class]) + 1
@@ -166,14 +194,17 @@ distances <- function(distance_values, kernels, kernels_s, config) {
 #  time_startb <- unclass(Sys.time())
    for (data_column in class_names) {
     #flat_index <- data_column
-    full_index <- getHierarquicalIndex(data_column)
-    class_name <- full_index[1]
-    centroid_index <- as.numeric(full_index[2])
+    #full_index <- getHierarquicalIndex(data_column)
+    #class_name <- full_index[1]
+    #centroid_index <- as.numeric(full_index[2])
+    class_name <- getFlatIndexClass(data_column)
+    centroid_index <- as.numeric(getFlatIndexCentroid(data_column))
     
     k <- kernels[[class_name]]
     kernel_s <- as.numeric(kernels_s[data_column])
         
     # wji é o total do tamanho do centroid em análise
+    #browser()
     wji <- k@size[centroid_index] # the number of patterns that are included in each cluster.
     distance_table[,data_column] = wji * exp(-distance_table[,data_column] * kernel_s)
   }

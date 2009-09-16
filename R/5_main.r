@@ -2,6 +2,12 @@
 # Main functions
 #
 
+# 
+# Version 1, September 2009
+# Fernando Martins
+# fmp.martins@gmail.com
+# http://www.vilma-fernando.net/fernando
+#
 
 #
 # Remora model function.
